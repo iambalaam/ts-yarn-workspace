@@ -1,3 +1,5 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
@@ -13,5 +15,20 @@ module.exports = {
                 }]
             }
         ]
+    },
+
+    plugins: [new BundleAnalyzerPlugin()],
+
+    optimization: {
+        splitChunks: {
+            minSize: 10,
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     }
 }
