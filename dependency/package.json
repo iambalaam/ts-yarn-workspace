@@ -1,0 +1,12 @@
+{
+    "name": "dependency",
+    "version": "1.0.0",
+    "main": "./src/index.ts",
+    "dependencies": {
+        "react": "^16.4.2"
+    },
+    "devDependencies": {
+        "typescript": "^3.0.1",
+        "@types/react": "^16.4.11"
+    }
+}
